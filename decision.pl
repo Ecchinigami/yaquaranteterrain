@@ -1,7 +1,7 @@
 /*
 
 
-  Définition de l'IA du joueur artificiel de Rasende Roboter
+  Dï¿½finition de l'IA du joueur artificiel de Rasende Roboter
 
 
 */
@@ -22,6 +22,8 @@ init(_).
 */
 
 
+deplacement(X,Y,1,X,Y,N, TL, TR, BL, BR, N) :- Pos is [X,Y], member(Pos, nb_getval(robotsPos)), writef('deplacement : %t\n',[N]), !. 
+
 deplacement(X,Y,1,X,Y,N, TL, TR, BL, BR, N) :- obstacle(X,Y, TL, TR, BL, BR,0), writef('deplacement : %t\n',[N]),!.
 deplacement(X,Y,3,X,Y,N, TL, TR, BL, BR, N) :- obstacle(X,Y, TL, TR, BL, BR,0), writef('deplacement : %t\n',[N]),!.
 deplacement(X,Y,2,X,Y,N, TL, TR, BL, BR, N) :- obstacle(X,Y, TL, TR, BL, BR,1), writef('deplacement : %t\n',[N]),!.
@@ -33,6 +35,15 @@ deplacement(X,Y, 2, NX,NY,N, TL, TR, BL, BR,NBR) :- N1 is N+1, Y1 is Y+1, deplac
 deplacement(X,Y, 4, NX,NY,N, TL, TR, BL, BR,NBR) :- N1 is N+1, Y1 is Y-1, deplacement(X,Y1,4, NX,NY, N1, TL, TR, BL, BR,NBR).
 
 deplacement(X,Y, D, NX, NY, TL, TR, BL, BR,NBR) :- deplacement(X,Y, D,NX, NY,0, TL, TR, BL, BR,NBR).
+
+
+
+move( [_| _],[]) :- nb_delete(robotsPos). 
+move( [_, _, _, _, T, BX, BY, GX, GY, YX, YY, RX, RY | _],[]):- T>=1, T < 5,  nb_setval(robotsPos,[ [GX, GY],[YX, YY],[RX, RY]]).
+move( [_, _, _, _, T, BX, BY, GX, GY, YX, YY, RX, RY | _],[]):- T>=5, T < 9, nb_setval(robotsPos,[[BX, BY],[YX, YY],[RX, RY]]).
+move( [_, _, _, _, T, BX, BY, GX, GY, YX, YY, RX, RY | _],[]):- T>=9, T < 13, nb_setval(robotsPos,[[BX, BY],[GX, GY],[RX, RY]]).
+move( [_, _, _, _, T, BX, BY, GX, GY, YX, YY, RX, RY | _],[]):- T>=13, T < 16, nb_setval(robotsPos,[[BX, BY],[GX, GY],[YX, YY]]).
+
 
 
 move( [TL, TR, BL, BR, _, BX, BY | _],[]) :- deplacement(BX, BY, 1, NX, NY, TL, TR, BL, BR, N),   writef('Coordonnees du robot: [%t , %t] / Obstacle : [%t, %t] / Deplacement de %t case(s) \n', [BX, BY, NX, NY, N]), !.
