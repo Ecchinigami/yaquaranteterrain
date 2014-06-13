@@ -54,26 +54,33 @@ obstacle(_,16,_,_,_,_,_).
 
 % TL1
 obstacle(3,0,0,_,_,_,1).
-obstacle(5,1,0,_,_,_,0).
+obstacle(4,0,0,_,_,_,0).
+obstacle(5,1,0,_,_,_,1).
+obstacle(6,1,0,_,_,_,0).
 obstacle(6,1,0,_,_,_,1).
 obstacle(6,2,0,_,_,_,0).
 obstacle(1,2,0,_,_,_,1).
 obstacle(1,3,0,_,_,_,0).
-obstacle(2,3,0,_,_,_,1).
-obstacle(5,3,0,_,_,_,0).
-obstacle(5,4,0,_,_,_,1).
-obstacle(4,4,0,_,_,_,0).
-obstacle(2,5,0,_,_,_,0).
-obstacle(3,5,0,_,_,_,1).
-obstacle(2,5,0,_,_,_,0).
+obstacle(1,3,0,_,_,_,1).
+obstacle(2,3,0,_,_,_,0).
+obstacle(5,3,0,_,_,_,1).
+obstacle(5,4,0,_,_,_,0).
+obstacle(4,4,0,_,_,_,1).
+obstacle(5,4,0,_,_,_,0).
+obstacle(2,5,0,_,_,_,1).
+obstacle(3,5,0,_,_,_,0).
+obstacle(2,5,0,_,_,_,1).
 obstacle(2,6,0,_,_,_,0).
 obstacle(7,5,0,_,_,_,1).
 obstacle(8,5,0,_,_,_,0).
+obstacle(7,5,0,_,_,_,1).
 obstacle(7,6,0,_,_,_,0).
 obstacle(0,6,0,_,_,_,1).
+obstacle(0,7,0,_,_,_,0).
 obstacle(6,7,0,_,_,_,1).
 obstacle(7,7,0,_,_,_,0).
-obstacle(7,6,0,_,_,_,0).
+obstacle(7,6,0,_,_,_,1).
+obstacle(7,7,0,_,_,_,0).
 % TL2
 obstacle(4,0,1,_,_,_,1).
 obstacle(5,0,1,_,_,_,0).
