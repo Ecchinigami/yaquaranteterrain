@@ -1,4 +1,4 @@
-:- module( data,[	element/7,	obstacle/7] ).
+:- module( data,[	element/7,	obstacle/8] ).
 % Element(IdElement,X,Y,TL,TR,BL,BR).
 % TL1
 element(1,6,1,0,_,_,_).
@@ -46,8 +46,11 @@ element(11,9,12,_,_,_,1).
 % Contour de la carte:
 
 
-obstacle(-1,_,_,_,_,_,_).
-obstacle(16,_,_,_,_,_,_).
+obstacle(_,-1,_,_,_,_,_,_).
+obstacle(_,_,_,16,_,_,_,_).
+obstacle(-1,_,_,_,_,_,_,_).
+obstacle(_,_,16,_,_,_,_,_).
+
 
 obstacle(_,-1,_,_,_,_,_).
 obstacle(_,16,_,_,_,_,_).
